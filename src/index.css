@@ -47,7 +47,26 @@ main {
   width: 100%;
 }
 
+.App {
+  --col-side: calc(var(--tile-size) * 4);
+  --col-center: calc(var(--tile-size) * 10);
+  --grid-height: calc(var(--tile-size) * 18);
+
+  width: calc(var(--tile-size) * (20));
+  margin: auto;
+  display: grid;
+
+  grid-gap: var(--tile-size) var(--tile-size);
+  grid-template-columns: var(--col-side) var(--col-center) var(--col-side);
+  grid-template-rows: 100px var(--grid-height) 100px;
+
+  grid-template-areas: "h h h"
+                       "l c r"
+                       ". b .";
+}
+
 .App-header {
+  grid-area: h;
   background-color: #282c34;
   min-height: 10vh;
   display: flex;
@@ -102,6 +121,7 @@ main {
 }
 
 .grid-board {
+  grid-area: c;
   display: grid;
   grid-template-columns: repeat(var(--cols), var(--tile-size));
   grid-gap: 0;
@@ -109,9 +129,14 @@ main {
 }
 
 .next-block {
+  grid-area: l;
   display: grid;
   grid-template-columns: repeat(4, var(--tile-size));
   align-self: flex-start;
+}
+
+.score-board {
+  grid-area: r;
 }
 
 .score-board-button {
