@@ -4,6 +4,7 @@ import './App.css'
 import GridBoard from './components/GridBoard'
 import NextBlock from './components/NextBlock'
 import ScoreBoard from './components/ScoreBoard'
+import Controls from './components/Controls'
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <GridBoard />
       <NextBlock />
       <ScoreBoard />
+      <Controls />
     </div>
   )
 }
