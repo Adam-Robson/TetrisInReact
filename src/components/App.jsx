@@ -3,8 +3,9 @@ import './App.css'
 
 import GridBoard from './components/GridBoard'
 import NextBlock from './components/NextBlock'
+import ScoreBoard from './components/ScoreBoard'
 
-export default function App () {
+export default function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -12,6 +13,7 @@ export default function App () {
       </header>
       <GridBoard />
       <NextBlock />
+      <ScoreBoard />
     </div>
   )
 }
