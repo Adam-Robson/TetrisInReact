@@ -5,21 +5,75 @@
 * {
   box-sizing: border-box;
 }
-
 :root {
-  --platinum: hsla(90, 4%, 90%, 1);
-  --jet: hsla(0, 1%, 24%, 1);
+  --bg-color: rgba(150, 150, 150, 1);
 
-  height: 100vh;
-  width: 100vw;
-  margin: 0 auto;
-  padding: 0;
-  color-scheme: dark light;
-  font-family: 'Inter Variable', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 300;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --border-left-color: hsla(0, 0.00%, 100.00%, 0.20);
+  --border-top-color: hsla(0, 0.00%, 100.00%, 0.33);
+  --border-right-color: hsla(0, 0.00%, 0.00%, 0.15);
+  --border-bottom-color: hsla(0, 0.00%, 0.00%, 0.50);
 
+  --color-0: hsl(0, 7.80%, 52.40%);
+  --color-1: hsl(24, 14.70%, 44.10%);
+  --color-2: hsl(50, 7.40%, 47.50%);
+  --color-3: hsl(240, 10.40%, 51.00%);
+  --color-4: hsl(287, 9.70%, 51.40%);
+  --color-5: hsl(120, 11.20%, 56.30%);
+  --color-6: hsl(198, 10.90%, 53.30%);
+  --color-7: hsl(0, 8.40%, 53.30%);
+
+  --button-color-t: hsl(0, 0.00%, 78.40%);
+  --button-color-r: hsl(0, 0.00%, 58.80%);
+  --button-color-b: hsl(0, 0.00%, 47.10%);
+  --button-color-l: hsl(0, 0.00%, 87.10%);
+
+  --cols: 10;
+  --rows: 18;
+  --tile-size: 20px;
+  --border-width: 5px;
+}
+
+.color-0 {
+  background-color: var(--color-0);
+}
+
+.color-1 {
+  background-color: var(--color-1);
+}
+
+.color-2 {
+  background-color: var(--color-2);
+}
+
+.color-3 {
+  background-color: var(--color-3);
+}
+
+.color-4 {
+  background-color: var(--color-4);
+}
+
+.color-5 {
+  background-color: var(--color-5);
+}
+
+.color-6 {
+  background-color: var(--color-6);
+}
+
+.color-7 {
+  background-color: var(--color-7);
+}
+
+.grid-square {
+  border-style: solid;
+  width: var(--tile-size);
+  height: var(--tile-size);
+  border-width: var(--border-width);
+  border-left-color: var(--border-left-color);
+  border-top-color: var(--border-top-color);
+  border-right-color: var(--border-right-color);
+  border-bottom-color: var(--border-bottom-color);
 }
 
 html,
@@ -34,6 +88,17 @@ body {
 main {
   height: 100%;
   width: 100%;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .fadein {
