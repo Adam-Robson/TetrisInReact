@@ -76,6 +76,13 @@
   border-bottom-color: var(--border-bottom-color);
 }
 
+.grid-board {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), var(--tile-size));
+  grid-gap: 0;
+  align-self: flex-start;
+}
+
 html,
 body {
   background-color: var(--platinum);
