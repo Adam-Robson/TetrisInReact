@@ -66,8 +66,9 @@ export const gameSlice = createSlice({
     }
     return state
   },
-  gameOver: () => {
-
+  gameOver: (state) => {
+    state.gameOver = true
+    return state
   },
   restart: () => defaultGameState()
 })
