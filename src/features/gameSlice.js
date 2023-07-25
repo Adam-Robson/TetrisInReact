@@ -42,4 +42,9 @@ export const {
   restart
 } = gameSlice.actions
 
-export default gameSlice.reducer
+export const isRunningRef = state => state.isRunning
+export const gameOverRef = state => state.gameOver
+export const scoreRef = state => state.score
+
+
+export default gameSlice.reducer;

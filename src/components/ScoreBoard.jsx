@@ -1,15 +1,27 @@
 import React from 'react'
-
+import { useSelector, useDispatch } from 'react-redux'
+import { isRunningRef, gameOverRef, scoreRef, restart, resume, pause } from '../features/gameSlice'
 export default function ScoreBoard() {
+  const dispatch = useDispatch()
+  const isRunning = useSelector(isRunningRef)
+  const gameOver = useSelector(gameOverRef)
+  const score = useSelector(scoreRef)
+
   return (
     <div className="score-board">
-      <div>Score: 0</div>
+      <div>Score:{ score }</div>
       <div>Level: 1</div>
       <button className="score-board-button" onClick={(e) => {
-        console.log('play')
-      }}>Play</button>
+        if (gameOver) { return }
+        if (isRunning) {
+          dispatch(pause())
+        } else {
+          dispatch(resume())
+        }
+      }
+      }>{ isRunning ? 'Pause' : 'Play' }</button>
       <button className="score-board-button" onClick={(e) => {
-        console.log('restart')
+        dispatch(restart())
       }}>Restart</button>
     </div>
   )
