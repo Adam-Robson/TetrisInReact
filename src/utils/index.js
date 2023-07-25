@@ -19,7 +19,7 @@ export function defaultGrid() {
   each shape represented by capital letter.
   each rotation is accounted for in a nested array.
 */
-export const randomShapes = [
+export const shapes = [
   // none
   [
     [0, 0, 0, 0],
@@ -167,7 +167,7 @@ export const randomShapes = [
 ]
 
 export function randomShapesIndex() {
-  return randomValue(1, randomShapes.length - 1)
+  return randomValue(1, shapes.length - 1)
 }
 
 /* default game state */

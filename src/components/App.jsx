@@ -1,11 +1,10 @@
 import React from 'react'
-import './App.css'
 
-import GridBoard from './components/GridBoard'
-import NextBlock from './components/NextBlock'
-import ScoreBoard from './components/ScoreBoard'
-import Controls from './components/Controls'
-import MessagePopup from './components/MessagePopup'
+import GridBoard from './GridBoard'
+import NextBlock from './NextBlock'
+import ScoreBoard from './ScoreBoard'
+import Controls from './Controls'
+import MessagePopup from './MessagePopup'
 export default function App() {
   return (
     <div className="App">
