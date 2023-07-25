@@ -10,11 +10,19 @@ export const gameSlice = createSlice({
     resume: () => {
 
     },
-    moveLeft: () => {
-
+    moveLeft: (state) => {
+      const { shape, grid, x, y, rotation } = state
+      if (canMoveTo(shape, grid, x - 1, y, rotation)) {
+        state.x = x - 1
+      }
+      return state
     },
-    moveRight: () => {
-
+    moveRight: (state) => {
+      const { shape, grid, x, y, rotation } = state
+      if (canMoveTo(shape, grid, x + 1, y, rotation)) {
+        state.x = x + 1
+      }
+      return state
     },
     moveDown: () => {
 
