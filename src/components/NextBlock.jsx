@@ -1,11 +1,15 @@
 import React from 'react'
 import GridSquare from './GridSquare'
+import { useSelector } from 'react-redux'
+import { shapes } from '../utils'
 
-export default function NextBlock (props) {
-  const block = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+export default function NextBlock() {
+  const nextShape = useSelector(state => state.nextShape)
+  const block = shapes[nextShape][0] // Get the first rotation
   const grid = block.map((rowArray, row) => {
     return rowArray.map((square, col) => {
-      return <GridSquare key={`${row}${col}`} color={square} />
+      const color = square ? nextShape : 0
+      return <GridSquare key={`${row}${col}`} color={color} />
     })
   })
 

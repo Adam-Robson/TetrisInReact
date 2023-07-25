@@ -13,14 +13,14 @@
   --border-right-color: hsla(0, 0.00%, 0.00%, 0.15);
   --border-bottom-color: hsla(0, 0.00%, 0.00%, 0.50);
 
-  --color-0: hsl(0, 7.80%, 52.40%);
-  --color-1: hsl(24, 14.70%, 44.10%);
-  --color-2: hsl(50, 7.40%, 47.50%);
-  --color-3: hsl(240, 10.40%, 51.00%);
-  --color-4: hsl(287, 9.70%, 51.40%);
-  --color-5: hsl(120, 11.20%, 56.30%);
-  --color-6: hsl(198, 10.90%, 53.30%);
-  --color-7: hsl(0, 8.40%, 53.30%);
+  --color-0: hsl(0, 2%, 66%);
+  --color-1: hsl(23, 50%, 72%);
+  --color-2: hsl(50, 10%, 55%);
+  --color-3: hsl(230, 52%, 19%);
+  --color-4: hsl(287, 9%, 39%);
+  --color-5: hsl(169, 14%, 39%);
+  --color-6: hsl(198, 20%, 46%);
+  --color-7: hsl(0, 41%, 77%);
 
   --button-color-t: hsl(0, 0.00%, 78.40%);
   --button-color-r: hsl(0, 0.00%, 58.80%);
