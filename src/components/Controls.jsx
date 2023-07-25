@@ -6,6 +6,8 @@ export default function Controls(props) {
   const dispatch = useDispatch()
   const isRunning = useSelector(state => state.isRunning)
   const speed = useSelector(state => state.speed)
+  const gameOver = useSelector(state => state.gameOver)
+
   const requestRef = useRef()
   const lastUpdateTimeRef = useRef(0)
   const progressTimeRef = useRef(0)
@@ -35,28 +37,28 @@ export default function Controls(props) {
   return (
   <div className="controls">
       <button
-        disabled={!isRunning}
+        disabled={!isRunning || gameOver}
         className="control-button"
         onClick={(e) => {
           dispatch(moveLeft())
         }}>Left</button>
 
       <button
-        disabled={!isRunning}
+        disabled={!isRunning || gameOver}
         className="control-button"
         onClick={(e) => {
           dispatch(moveRight())
         }}>Right</button>
 
       <button
-        disabled={!isRunning}
+        disabled={!isRunning || gameOver}
         className="control-button"
         onClick={(e) => {
           dispatch(rotate())
         }}>Rotate</button>
 
       <button
-        disabled={!isRunning}
+        disabled={!isRunning || gameOver}
         className="control-button"
         onClick={(e) => {
           dispatch(moveDown())

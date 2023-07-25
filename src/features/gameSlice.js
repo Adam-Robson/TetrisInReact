@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { defaultGameState, canMoveTo, nextRotation } from '../utils'
+import { defaultGameState, canMoveTo, nextRotation, addBlockToGrid, randomShapesIndex, checkRows } from '../utils/index'
 export const gameSlice = createSlice({
   name: 'game',
   initialState: defaultGameState(),
@@ -26,23 +26,51 @@ export const gameSlice = createSlice({
       }
       return state
     },
-    moveDown: () => {
+    moveDown: (state) => {
+      const { x, y, shape, grid, rotation, nextShape } = state
+      const yCandidate = y + 1
+      if (canMoveTo(shape, grid, x, yCandidate, rotation)) {
+        state.y = yCandidate
+        return state
+      };
 
-    },
-    rotate: (state) => {
-      const { shape, grid, x, y, rotation } = state
-      const newRotation = nextRotation(shape, rotation)
-      if (canMoveTo(shape, grid, x, y, newRotation)) {
-        state.rotation = newRotation
+      const { newGrid, gameOver } = addBlockToGrid(shape, grid, x, y, rotation)
+      if (gameOver) {
+        state.gameOver = true
+        return state
       }
+
+      state.x = 3
+      state.y = -4
+      state.rotation = 0
+      state.grid = newGrid
+      state.shape = nextShape
+      state.nextShape = randomShapesIndex()
+
+      if (!canMoveTo(nextShape, newGrid, 0, 4, 0)) {
+        console.log('Game is now over ;(')
+        state.shape = 0
+        state.gameOver = true
+        return state
+      }
+
+      state.score += checkRows(newGrid)
       return state
-    },
-    gameOver: () => {
-
-    },
-    restart: () => {
-
     }
+  },
+  rotate: (state) => {
+    const { shape, grid, x, y, rotation } = state
+    const newRotation = nextRotation(shape, rotation)
+    if (canMoveTo(shape, grid, x, y, newRotation)) {
+      state.rotation = newRotation
+    }
+    return state
+  },
+  gameOver: () => {
+
+  },
+  restart: () => {
+
   }
 })
 

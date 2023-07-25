@@ -228,3 +228,47 @@ export function canMoveTo(shape, grid, x, y, rotation) {
   }
   return true
 }
+
+export function addBlockToGrid(shape, grid, x, y, rotation) {
+  let gameOver = false
+  const block = shapes[shape][rotation]
+  const newGrid = [...grid]
+  for (let row = 0; row < block.length; row++) {
+    for (let col = 0; col < block[row].length; col++) {
+      if (block[row][col]) {
+        const yIndex = row + y
+        /*
+        If yIndex is less than 0, part of the block
+         is off the top of the screen: game is over!
+        */
+        if (yIndex < 0) {
+          gameOver = true
+        } else {
+          newGrid[row + y][col + x] = shape
+        }
+      }
+    }
+  }
+  return { newGrid, gameOver }
+}
+
+export function checkRows(grid) {
+  const points = [0, 40, 100, 300, 1200]
+  let completedRows = 0
+  for (let row = 0; row < grid.length; row++) {
+    /*
+    If there are no empty cells in a row,
+    the row must be complete!
+    */
+    if (grid[row].indexOf(0) === -1) {
+      completedRows += 1
+      /*
+      Remove the row and add one
+      to the top of the grid
+      */
+      grid.splice(row, 1)
+      grid.unshift(Array(10).fill(0))
+    }
+  }
+  return points[completedRows]
+}
