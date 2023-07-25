@@ -1,6 +1,5 @@
 export function randomValue(min, max) {
-  const num = Math.floor(Math.random() * max - min + 1) + min
-  return num
+  return Math.floor(Math.random() * max - min + 1) + min
 }
 
 export function defaultGrid() {
@@ -13,6 +12,7 @@ export function defaultGrid() {
       array[row].push(0)
     }
   }
+  return array
 }
 
 /*
@@ -177,7 +177,7 @@ export function defaultGameState() {
     shape: randomShapesIndex(),
     rotation: 0,
     x: 5,
-    y: -4,
+    y: 5,
     nextShape: randomShapesIndex(),
     isRunning: true,
     score: 0,
