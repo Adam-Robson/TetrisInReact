@@ -1,11 +1,11 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { isRunningRef, gameOverRef, scoreRef, restart, resume, pause } from '../features/gameSlice'
+import { restart, resume, pause } from '../features/gameSlice'
 export default function ScoreBoard() {
   const dispatch = useDispatch()
-  const isRunning = useSelector(isRunningRef)
-  const gameOver = useSelector(gameOverRef)
-  const score = useSelector(scoreRef)
+  const isRunning = useSelector(state => state.isRunning)
+  const gameOver = useSelector(state => state.gameOver)
+  const score = useSelector(state => state.score)
 
   return (
     <div className="score-board">

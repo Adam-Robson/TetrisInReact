@@ -4,11 +4,13 @@ export const gameSlice = createSlice({
   name: 'game',
   initialState: defaultGameState(),
   reducers: {
-    pause: () => {
-
+    pause: (state) => {
+      state.isRunning = false
+      return state
     },
-    resume: () => {
-
+    resume: (state) => {
+      state.isRunning = true
+      return state
     },
     moveLeft: (state) => {
       const { shape, grid, x, y, rotation } = state
@@ -54,9 +56,5 @@ export const {
   gameOver,
   restart
 } = gameSlice.actions
-
-export const isRunningRef = state => state.isRunning
-export const gameOverRef = state => state.gameOver
-export const scoreRef = state => state.score
 
 export default gameSlice.reducer
