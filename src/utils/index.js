@@ -220,14 +220,15 @@ export function canMoveTo(shape, grid, x, y, rotation) {
           if (possibleRow[proposedX] === undefined || possibleRow[proposedX] !== 0) {
             return false
           }
-        } else {
-          return false
         }
+      } else {
+        return false
       }
     }
   }
   return true
 }
+
 
 export function addBlockToGrid(shape, grid, x, y, rotation) {
   let gameOver = false
