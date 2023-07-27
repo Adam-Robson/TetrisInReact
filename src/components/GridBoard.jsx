@@ -42,8 +42,8 @@ export default function GridBoard(props) {
   })
 
   return (
-    <div className='grid-board'>
+    <section className='grid-board'>
       {gridSquares}
-    </div>
+    </section>
   )
 }
