@@ -10,9 +10,11 @@
   - [Acknowledgements](#acknowledgements)
 
 ## Description
+
   This is a tetris game implementation based on a React & Redux Tetris Tutorial created and built by Mitchell Hudson. The repository can be found [here](https://github.com/Tech-at-DU/React-Redux-Tetris-Tutorial).
 ## Overview
-  The high-level implementation strategy and overview, as outlined in the original tutorial is as follows:
+
+  The high-level overview & implementation strategy, as outlined in the original tutorial is as follows:
   1. Implement the overall grid square
   2. Implement the game board
   3. Implement the "next block" area
