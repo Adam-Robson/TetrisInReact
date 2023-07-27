@@ -16,7 +16,7 @@
   "author": "adaam robson",
   "license": "ISC",
   "dependencies": {
-    "@babel/plugin-transform-runtime": "^7.22.5",
+    "@babel/plugin-transform-runtime": "^7.22.9",
     "@reduxjs/toolkit": "^1.9.5",
     "autoprefixer": "^10.4.14",
     "copy-webpack-plugin": "^11.0.0",
