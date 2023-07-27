@@ -50,6 +50,7 @@ export const gameSlice = createSlice({
 
       if (canMoveTo(shape, grid, x, yCandidate, rotation)) {
         state.y = yCandidate
+        return state
       }
 
       const { newGrid, gameOver } = addBlockToGrid(shape, grid, x, y, rotation)
