@@ -40,6 +40,7 @@ export const gameSlice = createSlice({
       if (canMoveTo(shape, grid, x + 1, y, rotation)) {
         state.x = x + 1
       }
+      return state
     },
 
     /** MOVE DOWN */
@@ -55,6 +56,7 @@ export const gameSlice = createSlice({
 
       if (gameOver) {
         state.gameOver = true
+        return state
       }
 
       state.x = 3
@@ -67,6 +69,7 @@ export const gameSlice = createSlice({
       if (!canMoveTo(nextShape, newGrid, 0, 4, 0)) {
         state.shape = 0
         state.gameOver = true
+        return state
       }
 
       state.score += checkRows(newGrid)
