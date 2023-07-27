@@ -96,10 +96,7 @@ export const gameSlice = createSlice({
     },
 
     /** RESTART */
-    restart: (state) => {
-      state.restart = defaultGameState()
-      return state
-    }
+    restart: () => defaultGameState()
   }
 })
 
