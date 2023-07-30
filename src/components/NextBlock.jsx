@@ -14,8 +14,8 @@ export default function NextBlock() {
   })
 
   return (
-    <div className="next-block">
+    <section className="next-block">
       {grid}
-    </div>
+    </section>
   )
 }
