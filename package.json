@@ -5,7 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --devtool source-map",
     "start": "webpack serve --mode development --hot"
   },
   "keywords": [
