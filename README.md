@@ -7,11 +7,10 @@
   - [Description](#description)
   - [Overview](#overview)
   - [Contact](#contact)
-  - [Acknowledgements](#acknowledgements)
 
 ## Description
 
-  This is a tetris game implementation based on a React & Redux Tetris Tutorial created and built by Mitchell Hudson. The repository can be found [here](https://github.com/Tech-at-DU/React-Redux-Tetris-Tutorial).
+  This is a tetris implementation based on [this](https://github.com/Tech-at-DU/React-Redux-Tetris-Tutorial) repository.
 ## Overview
 
   The high-level overview & implementation strategy, as outlined in the original tutorial is as follows:
@@ -34,6 +33,3 @@
 ## Contact
 
 I am available by [email](mailto:adamray312@gmail.com) or any platform where I spend my time. Feel free to reach out!
-## Acknowledgements
-
-Thanks to George Ceja and Mitchell Hudson for generously sharing. Every piece built helps someone retain a fuller understanding of their own capabilities. 

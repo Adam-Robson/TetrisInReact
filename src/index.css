@@ -60,8 +60,8 @@ main {
   grid-template-rows: 100px var(--grid-height) 100px;
 
   grid-template-areas: "h h h"
-                       "l c r"
-                       ". b .";
+    "l c r"
+    ". b .";
 }
 
 .header {
@@ -83,7 +83,7 @@ main {
   grid-area: c;
   display: grid;
   grid-template-columns: repeat(var(--cols), var(--tile-size));
-  margin: 0 0 0 2em;
+margin: 0 0 0 2em;
 }
 
 .grid-square {
@@ -115,6 +115,7 @@ main {
   border-left-color: var(--button-color-l);
   border-right-color: var(--button-color-r);
   border-bottom-color: var(--button-color-b);
+  margin: 1em 0;
 }
 
 .controls {
@@ -146,12 +147,12 @@ main {
   background-color: rgba(240, 251, 188, 0.595);
   color: var(--color-8);
   text-align: center;
-}
+  }
 
 .score,
 .level {
   font-size: 1.64em;
-}
+  }
 
 .color-0 {
   background-color: var(--color-0);
