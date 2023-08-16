@@ -19,8 +19,8 @@ module.exports = {
   rules: {
     'space-before-function-paren': ['error', {
       anonymous: 'always',
-      named: 'never',
-      asyncArrow: 'never'
+      named: 'always',
+      asyncArrow: 'always'
     }]
   }
 }
