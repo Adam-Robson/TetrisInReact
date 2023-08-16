@@ -1,7 +1,6 @@
-const path = require('path');
-const webpack = require('webpack');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -9,7 +8,7 @@ module.exports = {
     './src/index.js'
   ],
   output: {
-    path: path.resolve(__dirname + '/build'),
+    path: path.resolve('./build'),
     filename: '[name].[contenthash].js',
     clean: true
   },
@@ -17,18 +16,21 @@ module.exports = {
     port: 3000,
     historyApiFallback: true
   },
-   plugins: [
+  plugins: [
     new HtmlWebpackPlugin({
-       template: path.join(__dirname, './src/index.html')
+      template: path.join('/index.html'),
+      inject: true
     }),
+    new webpack.optimize.UglifyJsPlugin(),
     new webpack.ProvidePlugin({
       React: 'react'
-    }),
+    })
   ],
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
+        include: path.resolve('index.js'),
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -73,10 +75,10 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource'
-      },
+      }
     ]
   },
-   resolve: {
-    extensions: ['.*', '.js', '.jsx'], //  '.ts', '.tsx'
-  },
-};
+  resolve: {
+    extensions: ['.*', '.js', '.jsx'] //  '.ts', '.tsx'
+  }
+}
