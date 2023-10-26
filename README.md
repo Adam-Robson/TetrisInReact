@@ -1,5 +1,5 @@
 # Tetris
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/81cd5efd-ecbc-4900-8ab1-22b312bd54c4/deploy-status)](https://app.netlify.com/sites/cheery-cendol-c22feb/deploys)
 Tetris Game with React, Redux Toolkit, Webpack, Babel, and Deployed on Netlify**
 
 ## Summary
