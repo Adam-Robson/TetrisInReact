@@ -8,21 +8,18 @@ import MessagePopup from './MessagePopup'
 
 export default function App() {
   return (
-    <main>
+    <>
       <Header />
-      <div className="container">
-      <div className="content">
-        <div className="game-section">
-          <GridBoard />
-          <NextBlock />
-        </div>
-        <div className="info-section">
-          <ScoreBoard />
+      <main>
+        <GridBoard />
+
+        <div className="controls">
           <Controls />
-          </div>
-          </div>
-      </div>
-      <MessagePopup />
-    </main>
+        </div>
+          <NextBlock />
+          <ScoreBoard />
+          <MessagePopup />
+      </main>
+    </>
   )
 }

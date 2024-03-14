@@ -24,12 +24,7 @@ const StyledButton = styled.button`
 `;
 
 const StyledSpan = styled.span`
-  display: block;
-  margin: 0.5rem 0.75rem;
-  font-size: 1.5rem;
-  color: var(--text);
-  text-align: center;
-  text-transform: uppercase;
+
 `;
 
 export default function ScoreBoard() {
@@ -49,9 +44,9 @@ export default function ScoreBoard() {
 
 
   return (
-    <StyledDiv>
-      <StyledSpan>Score: { score }</StyledSpan>
-      <StyledSpan >Level: 1</StyledSpan>
+    <div className="score-board">
+      <span className="score">Score: { score }</span>
+      <span className="level">Level: 1</span>
 
       <StyledButton onClick={handlePlayPause} disabled={gameOver}>
         {isRunning ? 'Pause' : 'Play'}
@@ -59,6 +54,6 @@ export default function ScoreBoard() {
       <StyledButton onClick={() => {
         dispatch(restart())
       }}>Restart</StyledButton>
-    </StyledDiv>
+    </div>
   )
 }
