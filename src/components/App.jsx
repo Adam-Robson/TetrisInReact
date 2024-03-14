@@ -8,8 +8,9 @@ import MessagePopup from './MessagePopup'
 
 export default function App() {
   return (
-    <main className="container">
+    <main>
       <Header />
+      <div className="container">
       <div className="content">
         <div className="game-section">
           <GridBoard />
@@ -18,7 +19,8 @@ export default function App() {
         <div className="info-section">
           <ScoreBoard />
           <Controls />
-        </div>
+          </div>
+          </div>
       </div>
       <MessagePopup />
     </main>

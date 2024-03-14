@@ -1,70 +1,96 @@
 import React, { useEffect, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { moveDown, moveLeft, moveRight, rotate } from '../features/gameSlice'
+import styled from 'styled-components'
 
-export default function Controls(props) {
+const StyledDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 9rem;
+  left: 12rem;
+`;
+
+const StyledButton = styled.button`
+  width: 4.5rem;
+  margin: 0.5rem;
+  height: 3.5rem;
+  text-align: center;
+  display: block;
+  border-width: 3px;
+  border-top-color: var(--button-color-t);
+  border-left-color: var(--button-color-l);
+  border-right-color: var(--button-color-r);
+  border-bottom-color: var(--button-color-b);
+`;
+
+export default function Controls() {
   const dispatch = useDispatch()
   const isRunning = useSelector(state => state.isRunning)
-  const speed = useSelector(state => state.speed)
   const gameOver = useSelector(state => state.gameOver)
 
-  const requestRef = useRef()
-  const lastUpdateTimeRef = useRef(0)
-  const progressTimeRef = useRef(0)
-
-  function update(time) {
-    requestRef.current = requestAnimationFrame(update)
-    if (!isRunning) {
-      return
+  function handleMoveLeft() {
+    if (isRunning && !gameOver) {
+      dispatch(moveLeft());
     }
-    if (!lastUpdateTimeRef.current) {
-      lastUpdateTimeRef.current = time
-    }
-    const deltaTime = time - lastUpdateTimeRef.current
-    progressTimeRef.current += deltaTime
-    if (progressTimeRef.current > speed) {
-      dispatch(moveDown())
-      progressTimeRef.current = 0
-    }
-    lastUpdateTimeRef.current = time
   }
 
-  useEffect(() => {
-    requestRef.current = requestAnimationFrame(update)
-    return () => cancelAnimationFrame(requestRef.current)
-  }, [isRunning])
+
+  function handleMoveRight() {
+    if (isRunning && !gameOver) {
+      dispatch(moveRight());
+    }
+  }
+
+
+  function handleRotate() {
+    if (isRunning && !gameOver) {
+      dispatch(rotate());
+    }
+  }
+
+
+  function handleMoveDown() {
+    if (isRunning && !gameOver) {
+      dispatch(moveDown());
+    }
+  }
 
   return (
-  <div className="controls">
-      <button
+   <StyledDiv>
+      <StyledButton
         disabled={!isRunning || gameOver}
         className="control-button"
-        onClick={(e) => {
-          dispatch(moveLeft())
-        }}>Left</button>
+        onClick={handleMoveLeft}
+      >
+        Left
+      </StyledButton>
 
-      <button
+      <StyledButton
+
         disabled={!isRunning || gameOver}
         className="control-button"
-        onClick={(e) => {
-          dispatch(moveRight())
-        }}>Right</button>
+        onClick={handleMoveRight}
+      >
+        Right
+      </StyledButton>
 
-      <button
+      <StyledButton
+
         disabled={!isRunning || gameOver}
         className="control-button"
-        onClick={(e) => {
-          dispatch(rotate())
-        }}>Rotate</button>
+        onClick={handleRotate}
+      >
+        Rotate
+      </StyledButton>
 
-      <button
+      <StyledButton
         disabled={!isRunning || gameOver}
         className="control-button"
-        onClick={(e) => {
-          dispatch(moveDown())
-          // ...
-        }}>Down</button>
-
-  </div>
+        onClick={handleMoveDown}
+      >
+        Down
+      </StyledButton>
+    </StyledDiv>
   )
 }
